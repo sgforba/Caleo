@@ -15,11 +15,16 @@
     .homepage {
       width: 100%; } }
 
+body.mobile-modal {
+  overflow: hidden;
+  position: fixed; }
+
 html, body {
   min-height: 100%;
   height: 100%;
   min-width: 100%;
-  width: 100%; }
+  width: 100%;
+  overflow: auto; }
 
 .standard-post .content-wrapper main {
   float: left; }
@@ -61,11 +66,17 @@ header {
   height: 54px;
   border-bottom: 2px solid #e5e5e5;
   font-family: Montserrat, sans-serif; }
+  @media screen and (max-width: 768px) {
+    header {
+      height: auto; } }
   header .nav-wrapper {
     height: 100%;
     width: 1180px;
     margin: 0 auto;
     line-height: 54px; }
+    @media screen and (max-width: 768px) {
+      header .nav-wrapper {
+        width: 100%; } }
     header .nav-wrapper .page-nav {
       float: left;
       display: flex;
@@ -73,6 +84,11 @@ header {
       justify-content: space-between;
       font-size: 12px;
       font-weight: 600; }
+      @media screen and (max-width: 768px) {
+        header .nav-wrapper .page-nav {
+          float: none;
+          min-width: 0px;
+          padding: 0px 20px; } }
       header .nav-wrapper .page-nav a {
         text-decoration: none;
         text-transform: uppercase;
@@ -81,7 +97,14 @@ header {
       float: right;
       width: 165px;
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      box-sizing: border-box; }
+      @media screen and (max-width: 768px) {
+        header .nav-wrapper .social {
+          float: none;
+          width: 100%;
+          padding-left: 20px;
+          padding-right: 20px; } }
       header .nav-wrapper .social a {
         color: #000; }
 
@@ -92,20 +115,107 @@ header {
   height: 127px;
   border-bottom: 2px solid #e5e5e5;
   line-height: 127px; }
+  @media screen and (max-width: 768px) {
+    .logo-wrapper {
+      height: 65px;
+      line-height: 65px; } }
   .logo-wrapper .logo {
-    display: block;
     width: 100%;
     text-align: center;
     font-size: 50px;
     text-decoration: none;
     color: #000;
-    font-weight: 800; }
+    font-weight: 800;
+    z-index: 15; }
+
+.hamburger {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: none;
+  cursor: pointer;
+  z-index: 20; }
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block; } }
+  .hamburger span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 50%;
+    background: #000;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out; }
+
+.hamburger span:nth-child(even) {
+  left: 50%;
+  border-radius: 0 9px 9px 0; }
+
+.hamburger span:nth-child(odd) {
+  left: 0px;
+  border-radius: 9px 0 0 9px; }
+
+.hamburger span:nth-child(1), .hamburger span:nth-child(2) {
+  top: 0px; }
+
+.hamburger span:nth-child(3), .hamburger span:nth-child(4) {
+  top: 18px; }
+
+.hamburger span:nth-child(5), .hamburger span:nth-child(6) {
+  top: 36px; }
+
+.hamburger.open span:nth-child(1), .hamburger.open span:nth-child(6) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.hamburger.open span:nth-child(2), .hamburger.open span:nth-child(5) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.hamburger.open span:nth-child(1) {
+  left: 5px;
+  top: 7px; }
+
+.hamburger.open span:nth-child(2) {
+  left: calc(50% - 5px);
+  top: 7px; }
+
+.hamburger.open span:nth-child(3) {
+  left: -50%;
+  opacity: 0; }
+
+.hamburger.open span:nth-child(4) {
+  left: 100%;
+  opacity: 0; }
+
+.hamburger.open span:nth-child(5) {
+  left: 5px;
+  top: 29px; }
+
+.hamburger.open span:nth-child(6) {
+  left: calc(50% - 5px);
+  top: 29px; }
 
 .homepage-mobile-header {
   display: none;
-  height: 200px;
-  line-height: 200px;
-  position: relative; }
+  height: 150px;
+  line-height: 150px;
+  position: relative;
+  font-family: Montserrat, sans-serif;
+  background: #f5f5f7; }
   .homepage-mobile-header .logo {
     display: block;
     width: 100%;
@@ -124,7 +234,13 @@ header {
   text-transform: uppercase;
   height: 100vh;
   float: left;
-  width: 12%; }
+  width: 14%; }
+  .mobile-modal .homepage-sidebar {
+    left: 0px;
+    width: 100%;
+    background: #f5f5f7; }
+    .mobile-modal .homepage-sidebar .logo {
+      display: none; }
   .homepage-sidebar.scrolled {
     position: fixed;
     z-index: 10; }
@@ -133,12 +249,12 @@ header {
       width: 19%; } }
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     .homepage-sidebar {
-      left: -1000px; } }
+      width: 19%; } }
   @media screen and (max-width: 768px) {
     .homepage-sidebar {
       left: -1000px; }
       .homepage-sidebar .logo {
-        visibility: hidden; } }
+        display: none; } }
   .homepage-sidebar .logo {
     display: block;
     width: 100%;
@@ -150,6 +266,8 @@ header {
   .homepage-sidebar .navigation {
     margin-top: 110px;
     width: 100%; }
+    .mobile-modal .homepage-sidebar .navigation {
+      margin-top: 10px; }
     .homepage-sidebar .navigation li {
       font-size: 12px;
       width: 100%;
@@ -163,25 +281,26 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0px 30px; }
-    .homepage-sidebar .social li {
-      list-style: none;
-      text-indent: -100000px; }
+    .homepage-sidebar .social a {
+      color: #000; }
 
 .homepage-posts {
-  width: 86%;
-  margin-left: 14%; }
+  width: 85%;
+  margin-left: 15%; }
   @media screen and (min-width: 1025px) and (max-width: 1400px) {
     .homepage-posts {
       width: 80%;
       margin-left: 20%; } }
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     .homepage-posts {
-      margin: 0 auto;
-      width: 100%; } }
+      margin-left: 20%;
+      width: 80%; } }
   @media screen and (max-width: 768px) {
     .homepage-posts {
       margin: 0 auto;
-      width: 100%; } }
+      width: 92%; }
+      .mobile-modal .homepage-posts {
+        left: 100%; } }
   .homepage-posts .homepage-post {
     position: relative;
     height: 474px;
@@ -217,10 +336,10 @@ header {
         .homepage-posts .homepage-post.large {
           width: 100%; } }
       .homepage-posts .homepage-post.large .post-image {
-        height: 350px; }
+        height: 66%; }
         @media screen and (max-width: 768px) {
           .homepage-posts .homepage-post.large .post-image {
-            height: 60%;
+            height: 50%;
             margin: 0 auto; } }
       .homepage-posts .homepage-post.large .post-content {
         height: 124px;
@@ -277,14 +396,24 @@ header {
   width: 1180px;
   margin: 0 auto;
   font-family: Montserrat, sans-serif; }
+  @media screen and (max-width: 768px) {
+    .content-wrapper {
+      width: 100%; } }
   .content-wrapper main {
-    width: 865px; }
+    width: 865px;
+    padding-bottom: 60px; }
+    @media screen and (max-width: 768px) {
+      .content-wrapper main {
+        width: 100%; } }
     .content-wrapper main h3 {
       padding-top: 85px;
       font-size: 11px;
       color: #fc2407;
       text-align: center;
       font-weight: 700; }
+      @media screen and (max-width: 768px) {
+        .content-wrapper main h3 {
+          padding-top: 40px; } }
     .content-wrapper main h1 {
       padding-top: 25px;
       padding-bottom: 25px;
@@ -295,6 +424,9 @@ header {
       width: 100%;
       height: 505px;
       margin: 0 auto; }
+      @media screen and (max-width: 768px) {
+        .content-wrapper main .hero-wrapper {
+          height: auto; } }
       .content-wrapper main .hero-wrapper img {
         width: 100%;
         height: 100%; }
@@ -304,12 +436,19 @@ header {
       font-size: 15px;
       font-family: Lato, sans-serif;
       line-height: 1.4em; }
+      @media screen and (max-width: 768px) {
+        .content-wrapper main p {
+          padding: 0px 20px; } }
 
 aside {
   font-family: Montserrat, sans-serif; }
+  @media screen and (max-width: 768px) {
+    aside {
+      display: none; } }
   aside .popular-posts-wrapper h2 {
     text-transform: uppercase;
     font-size: 11px;
+    text-align: center;
     padding-bottom: 30px; }
   aside .popular-posts-wrapper .popular-post img {
     height: 75px;
