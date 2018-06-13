@@ -1,0 +1,28 @@
+footer {
+    font-family: $montserrat;
+    background: #000;
+    height: 215px;
+    width: 100%;
+    .footer-wrapper {
+        padding-top: 70px;
+        .logo {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 50px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;	        
+        }
+        .social {
+            padding-top: 33px;
+            width: 165px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            a {
+                color:#fc2407;
+            }        
+        }        
+    }
+}

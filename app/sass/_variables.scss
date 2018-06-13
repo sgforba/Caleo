@@ -1,0 +1,25 @@
+$mobile-break: 768px;
+$tablet-break: 1024px;
+$laptop-break: 1224px;
+$desktop-break: 1400px;
+$large-break: 1900px;
+
+
+@mixin breakpoint($point) {
+   @if $point == tablet {
+     @media screen and (min-width: $mobile-break + 1) and (max-width: $tablet-break) { @content ; }
+  }
+
+  @else if $point == desktop {
+    @media screen and (min-width: $tablet-break + 1) and (max-width: $desktop-break) { @content ; }
+  }  
+
+  @else if $point == mobile {
+      @media screen and (max-width: $mobile-break) { @content ; }
+  }
+
+}
+
+//FONTS
+$montserrat: Montserrat, sans-serif;
+$lato: Lato, sans-serif;

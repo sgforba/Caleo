@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+.homepage {
+  background: #f5f5f7;
+  width: 1900px;
+  column-gap: 15px;
+  font-family: Montserrat, sans-serif; }
+  .homepage .homepage-sidebar {
+    width: 250px; }
+    @media screen and (max-width: 768px) {
+      .homepage .homepage-sidebar {
+        position: fixed;
+        left: -10000px; } }
+  .homepage .homepage-posts {
+    float: right;
+    width: 1600px; }
+    @media screen and (max-width: 768px) {
+      .homepage .homepage-posts {
+        width: 100%; } }
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%;
+  width: 100%; }
+
+.standard-post .content-wrapper main {
+  float: left; }
+
+.standard-post .content-wrapper aside {
+  float: right; }
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+footer {
+  font-family: Montserrat, sans-serif;
+  background: #000;
+  height: 215px;
+  width: 100%; }
+  footer .footer-wrapper {
+    padding-top: 70px; }
+    footer .footer-wrapper .logo {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 50px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700; }
+    footer .footer-wrapper .social {
+      padding-top: 33px;
+      width: 165px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between; }
+      footer .footer-wrapper .social a {
+        color: #fc2407; }
+
+header {
+  width: 100%;
+  height: 54px;
+  border-bottom: 2px solid #e5e5e5;
+  font-family: Montserrat, sans-serif; }
+  header .nav-wrapper {
+    height: 100%;
+    width: 1180px;
+    margin: 0 auto;
+    line-height: 54px; }
+    header .nav-wrapper .page-nav {
+      float: left;
+      display: flex;
+      min-width: 400px;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600; }
+      header .nav-wrapper .page-nav a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000; }
+    header .nav-wrapper .social {
+      float: right;
+      width: 165px;
+      display: flex;
+      justify-content: space-between; }
+      header .nav-wrapper .social a {
+        color: #000; }
+
+.logo-wrapper {
+  font-family: Montserrat, sans-serif;
+  clear: left;
+  text-align: center;
+  height: 127px;
+  border-bottom: 2px solid #e5e5e5;
+  line-height: 127px; }
+  .logo-wrapper .logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 800; }
+
+.homepage-sidebar {
+  padding-top: 70px;
+  background: #fff;
+  text-transform: uppercase;
+  height: 100vh; }
+  .homepage-sidebar .logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 900; }
+  .homepage-sidebar .navigation {
+    margin-top: 110px;
+    width: 100%; }
+    .homepage-sidebar .navigation li {
+      font-size: 12px;
+      width: 100%;
+      text-align: center;
+      list-style: none;
+      margin-bottom: 25px; }
+      .homepage-sidebar .navigation li a {
+        text-decoration: none;
+        color: #000; }
+  .homepage-sidebar .social li {
+    list-style: none;
+    text-indent: -100000px; }
+
+.homepage-posts {
+  padding-top: 15px; }
+  .homepage-posts .homepage-post {
+    position: relative;
+    height: 474px; }
+    @media screen and (max-width: 768px) {
+      .homepage-posts .homepage-post {
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 10px; } }
+    .homepage-posts .homepage-post .tag {
+      font-size: 11px;
+      color: #fff;
+      background: #fc2407;
+      text-transform: uppercase;
+      padding: 7px;
+      border-radius: 14px;
+      position: absolute;
+      top: 22px;
+      left: 30px; }
+    .homepage-posts .homepage-post .post-image {
+      width: 100%; }
+      .homepage-posts .homepage-post .post-image img {
+        width: 100%;
+        height: 100%; }
+    .homepage-posts .homepage-post .post-content {
+      background: #fff; }
+      .homepage-posts .homepage-post .post-content .comments {
+        font-size: 12px;
+        text-transform: uppercase; }
+    .homepage-posts .homepage-post.large {
+      width: 532px; }
+      @media screen and (max-width: 768px) {
+        .homepage-posts .homepage-post.large {
+          width: 90%; } }
+      .homepage-posts .homepage-post.large .post-image {
+        height: 350px; }
+        @media screen and (max-width: 768px) {
+          .homepage-posts .homepage-post.large .post-image {
+            height: 60%;
+            margin: 0 auto; } }
+      .homepage-posts .homepage-post.large .post-content {
+        height: 124px;
+        padding-left: 22px; }
+        .homepage-posts .homepage-post.large .post-content h1 {
+          padding-top: 30px;
+          padding-bottom: 30px;
+          font-size: 30px;
+          font-weight: 700; }
+        .homepage-posts .homepage-post.large .post-content .post-date {
+          font-size: 11px;
+          color: #a4a5a8;
+          padding-left: 15px;
+          text-transform: uppercase; }
+        .homepage-posts .homepage-post.large .post-content .post-length {
+          font-size: 12px;
+          color: #a4a5a8;
+          padding-left: 15px;
+          text-transform: uppercase; }
+    .homepage-posts .homepage-post.small {
+      width: 259px; }
+      @media screen and (max-width: 768px) {
+        .homepage-posts .homepage-post.small {
+          width: 90%; } }
+      .homepage-posts .homepage-post.small .post-image {
+        height: 271px;
+        width: 100%; }
+      .homepage-posts .homepage-post.small .post-content {
+        height: 204px;
+        padding: 0px 22px 0px 22px; }
+        .homepage-posts .homepage-post.small .post-content h1 {
+          padding-top: 35px;
+          padding-bottom: 25px;
+          font-size: 20px;
+          font-weight: 700; }
+        .homepage-posts .homepage-post.small .post-content p {
+          font-size: 15px;
+          color: #8d8a8a;
+          padding-bottom: 30px; }
+    .homepage-posts .homepage-post.small-type-2 {
+      position: relative; }
+      .homepage-posts .homepage-post.small-type-2 .post-image {
+        height: 100%;
+        width: 100%; }
+      .homepage-posts .homepage-post.small-type-2 .post-content {
+        background: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+        text-align: center; }
+
+.content-wrapper {
+  width: 1180px;
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif; }
+  .content-wrapper main {
+    width: 865px; }
+    .content-wrapper main h3 {
+      padding-top: 85px;
+      font-size: 11px;
+      color: #fc2407;
+      text-align: center;
+      font-weight: 700; }
+    .content-wrapper main h1 {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-weight: 800;
+      font-size: 34px;
+      text-align: center; }
+    .content-wrapper main .hero-wrapper {
+      width: 100%;
+      height: 505px;
+      margin: 0 auto; }
+      .content-wrapper main .hero-wrapper img {
+        width: 100%;
+        height: 100%; }
+    .content-wrapper main p {
+      margin-top: 35px;
+      color: #8d8a8a;
+      font-size: 15px;
+      font-family: Lato, sans-serif;
+      line-height: 1.4em; }
+
+aside {
+  font-family: Montserrat, sans-serif; }
+  aside .popular-posts-wrapper h2 {
+    text-transform: uppercase;
+    font-size: 11px;
+    padding-bottom: 30px; }
+  aside .popular-posts-wrapper .popular-post img {
+    height: 75px;
+    width: 80px;
+    float: left; }
+  aside .popular-posts-wrapper .popular-post .pop-post-content {
+    padding-left: 20px;
+    float: right; }
+    aside .popular-posts-wrapper .popular-post .pop-post-content .title {
+      font-size: 14px;
+      font-weight: 800;
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+    aside .popular-posts-wrapper .popular-post .pop-post-content .date {
+      font-size: 11px;
+      font-family: Lato, sans-serif;
+      color: #a0a0a0;
+      display: block; }
