@@ -10,8 +10,7 @@ function admin_bar(){
 add_action('init', 'admin_bar' );
 
 function blog_files() {
-  wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', NULL, '1.0', true);
-  wp_enqueue_script('main-blog-js', get_theme_file_uri('/assets/js/scripts.js'), NULL, '1.0', true);
+  wp_enqueue_script('main-blog-js', get_theme_file_uri('/assets/js/scripts.min.js'), NULL, '1.0', true);
   wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/assets/css/reset.css' );
   wp_enqueue_style('font-awesome', '//use.fontawesome.com/releases/v5.0.13/css/all.css');
   wp_enqueue_style('blog_main_styles', get_stylesheet_uri());
